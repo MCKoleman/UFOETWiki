@@ -7,4 +7,8 @@ export const navigation = [
 		title: "Components",
 		href: "/components",
 	},
+	{
+		title: "UFOpedia",
+		href: "/ufopedia",
+	},
 ] as const

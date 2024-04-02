@@ -1,9 +1,9 @@
 import type { Metadata, Viewport } from "next"
 
 export const metadata: Metadata = {
-	title: "Tephra UI v2.0",
+	title: "UFO ET Wiki",
 	description:
-		"Tephra UI is a design system for building and rapidly iterating on modern web applications by the LavaVein™ team.",
+		"Wiki for the UFO: Extraterrestrials Gold/Platinum and UFO2: Extraterrestrials Battle for Mercury games by Chaos Concept.",
 	formatDetection: {
 		telephone: false,
 		address: false,
@@ -17,5 +17,5 @@ export const viewport: Viewport = {
 	width: "device-width",
 	initialScale: 1,
 	maximumScale: 1,
-	// themeColor: '#0A78CD', Optym primary color
+	// themeColor: '#0A78CD'
 }
