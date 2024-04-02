@@ -1,0 +1,78 @@
+{
+	"$schema": "https://biomejs.dev/schemas/1.6.3/schema.json",
+	"organizeImports": {
+		"enabled": false
+	},
+	"formatter": {
+		"enabled": false
+	},
+	"json": {
+		"parser": {
+			"allowComments": true,
+			"allowTrailingCommas": true
+		}
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"recommended": true,
+			"complexity": {
+				"noExcessiveCognitiveComplexity": {
+					"level": "warn",
+					"options": {
+						"maxAllowedComplexity": 15
+					}
+				},
+				"useLiteralKeys": "off",
+				"useSimplifiedLogicExpression": "warn"
+			},
+			"correctness": {
+				"noUndeclaredVariables": "warn",
+				"noUnusedPrivateClassMembers": "warn",
+				"noUnusedVariables": "warn",
+				"useHookAtTopLevel": "error"
+			},
+			"style": {
+				"noNamespace": "error",
+				"noNegationElse": "warn",
+				"noNonNullAssertion": "off",
+				"noParameterProperties": "warn",
+				"noShoutyConstants": "warn",
+				"useBlockStatements": "warn",
+				"useCollapsedElseIf": "warn",
+				"useConsistentArrayType": {
+					"level": "warn",
+					"options": {
+						"syntax": "shorthand"
+					}
+				},
+				"useFilenamingConvention": {
+					"level": "warn",
+					"options": {
+						"requireAscii": true,
+						"filenameCases": ["kebab-case"]
+					}
+				},
+				"useForOf": "warn",
+				"useFragmentSyntax": "warn",
+				"useShorthandArrayType": "warn",
+				"useShorthandAssign": "warn",
+				"useSingleCaseStatement": "warn"
+			},
+			"suspicious": {
+				"noEmptyBlockStatements": "warn",
+				"useAwait": "warn"
+			},
+			"nursery": {
+				"noDuplicateElseIf": "warn",
+				"noDuplicateJsonKeys": "warn",
+				"noEvolvingAny": "warn",
+				"noUselessTernary": "warn",
+				"useJsxKeyInIterable": "warn"
+			}
+		}
+	},
+	"files": {
+		"ignore": ["node_modules", ".next"]
+	}
+}

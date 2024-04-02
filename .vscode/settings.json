@@ -1,0 +1,32 @@
+{
+	"editor.insertSpaces": false,
+	"editor.detectIndentation": false,
+	"typescript.preferences.autoImportFileExcludePatterns": [
+		"next/router.d.ts",
+		"next/dist/client/router.d.ts",
+		"@radix-ui/**/*",
+		"react-hook-form/dist/index.d.ts",
+		"react-day-picker/dist/index.d.ts"
+	],
+	"editor.tabSize": 4,
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"files.exclude": {
+		"**/.next": true,
+		"**/.vercel": true
+	},
+	"git.enableSmartCommit": true,
+	"git.autofetch": true,
+	"javascript.updateImportsOnFileMove.enabled": "always",
+	"typescript.updateImportsOnFileMove.enabled": "always",
+	"editor.formatOnSave": true,
+	"editor.quickSuggestions": {
+		"strings": true
+	},
+	"editor.linkedEditing": true,
+	"editor.codeActionsOnSave": {
+		"quickfix.biome": "always"
+	},
+	"[css]": {
+		"editor.defaultFormatter": "vscode.css-language-features"
+	}
+}

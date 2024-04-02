@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	:root {
+		--background: 0 0% 100%;
+		--background-muted: 210 12% 97%;
+
+		--foreground: 0 0% 15%;
+		--foreground-muted: 213 5% 47%;
+
+		--hover: 206 40% 40%;
+
+		--canvas: 200 8% 93%;
+
+		--primary: 206 91% 42%;
+		--primary-hover: 206 91% 35%;
+		--primary-contrast: 0 0% 100%;
+		--primary-foreground: 206 91% 42%;
+		--primary-muted: 206 60% 93%;
+
+		--secondary: 206 33% 37%;
+		--secondary-hover: 206 33% 30%;
+		--secondary-foreground: 206 33% 37%; /* For text, etc to meet accessibility */
+		--secondary-contrast: 0 0% 100%;
+
+		--active: 206 65% 95%;
+		--active-hover: 206 65% 95%;
+		--active-foreground: 206 95% 41%; /* For text, etc to meet accessibility */
+		--active-contrast: var(--foreground);
+
+		--info: 194 22% 81%;
+		--info-hover: 194 22% 78%;
+		--info-contrast: 0 0% 25%;
+		--info-foreground: 194 22% 40%;
+
+		--success: 110 88% 35%;
+		--success-hover: 110 88% 38%;
+		--success-contrast: 255 100% 100%;
+		--success-foreground: 110 88% 28%;
+
+		--warning: 41 90% 63%;
+		--warning-hover: 41 90% 55%;
+		--warning-contrast: 0 0% 18%;
+		--warning-foreground: 38 95% 43%;
+
+		--error: 5 70% 45%;
+		--error-hover: 5 70% 40%;
+		--error-contrast: 0 0% 100%;
+		--error-foreground: 5 70% 45%;
+
+		--popover: 0 0% 100%;
+		--popover-contrast: 0 0% 0%;
+		--tooltip: 0 0% 0%;
+		--tooltip-contrast: 0 0% 100%;
+		--overlay: 0 0% 0%;
+
+		--border: 197 8% 82%;
+
+		/* Border color for inputs such as <Input /> <Select /> <Textarea /> */
+		--input: 197 8% 82%;
+
+		/* Used for focused indicator */
+		--outline: 206 91% 62%;
+	}
+	.dark {
+		--background: 223 16% 17%;
+		--background-muted: 223 14% 21%;
+		--foreground: 0 0% 90%;
+		--foreground-muted: 213 5% 65%;
+		--hover: 0 0% 100%;
+
+		--canvas: 235 18% 12%;
+
+		--primary: 206 91% 60%;
+		--primary-hover: 206 91% 55%;
+
+		--primary-foreground: 206 91% 59%;
+		--primary-muted: 206 27% 24%;
+
+		--secondary: 206 25% 25%;
+		--secondary-hover: 206 25% 20%;
+		--secondary-foreground: 206 20% 57%;
+
+		--active: 223 16% 21%;
+
+		--popover: 223 16% 17%;
+		--popover-contrast: 0 0% 90%;
+
+		--info-foreground: 194 22% 65%;
+		--success-foreground: 110 88% 40%;
+		--warning-foreground: 41 90% 63%;
+		--error-foreground: 5 97% 65%;
+
+		--border: 218 9% 23%;
+
+		/* Border color for inputs such as <Input /> <Select /> <Textarea /> */
+		--input: 218 9% 28%;
+
+		/* Used for focused indicator */
+		--outline: 206 91% 62%;
+	}
+}
+
+@layer base {
+	* {
+		@apply box-border min-w-0 border-border;
+	}
+	h1,
+	h2,
+	h3,
+	h4 {
+		@apply text-balance;
+	}
+	p {
+		@apply text-pretty;
+	}
+	.flex > * {
+		@apply min-w-0;
+	}
+	body {
+		@apply min-h-[100dvh] bg-background text-base text-foreground dark:text-foreground/95;
+		font-feature-settings:
+			"rlig" 1,
+			"calt" 1;
+	}
+}
