@@ -11,9 +11,13 @@ export type ResearchType =
 	| "AlienVesselsEquipment"
 	| "AlienIntentions"
 	| "Centaurus"
-	| "None"
+	| "All"
 
-export const gameTypeOptions: Array<NameLabelPair<ResearchType>> = [
+export const researchTypeOptions: Array<NameLabelPair<ResearchType>> = [
+	{
+		name: "All",
+		label: "All",
+	},
 	{
 		name: "Buildings",
 		label: "Buildings",
