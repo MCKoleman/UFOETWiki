@@ -68,6 +68,10 @@ interface MindShieldResearchEntry extends BaseProducableResearchEntry {
 	psiDefense: number
 }
 
+interface RocketLauncherResearchEntry extends BaseWeaponResearchEntry {
+	type: "RocketLauncher"
+}
+
 interface WeaponResearchEntry extends BaseWeaponResearchEntry {
 	type: "Weapon"
 	damage: number
@@ -123,6 +127,11 @@ interface BuildingResearchEntry extends BaseBuildingResearchEntry {
 	type: "Building"
 }
 
+interface DetectionBuildingResearchEntry extends BaseBuildingResearchEntry {
+	type: "DetectionBuilding"
+	range: number
+}
+
 interface DefenseBuildingResearchEntry extends BaseBuildingResearchEntry {
 	type: "DefenseBuilding"
 	damageMin: number
@@ -151,6 +160,7 @@ export type ResearchEntry =
 	| ProducableResearchEntry
 	| AlienLifeFormResearchEntry
 	| BuildingResearchEntry
+	| DetectionBuildingResearchEntry
 	| DefenseBuildingResearchEntry
 	| AircraftResearchEntry
 	| TransporterAircraftResearchEntry
@@ -161,5 +171,6 @@ export type ResearchEntry =
 	| MindShieldResearchEntry
 	| ArmorResearchEntry
 	| MedkitResearchEntry
+	| RocketLauncherResearchEntry
 	| WeaponResearchEntry
 	| GrenadeResearchEntry

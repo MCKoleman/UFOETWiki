@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import Image from "next/image"
 import { BFM_UFOPEDIA } from "@/data/ufopedia-2bfm"
 import { GOLD_UFOPEDIA } from "@/data/ufopedia-gold"
 import { PLATINUM_UFOPEDIA } from "@/data/ufopedia-platinum"
@@ -12,6 +13,7 @@ import { Button } from "@/components/ui/button"
 
 export default function UFOpediaPage() {
 	const [currentView, setCurrentView] = useState<GameType>("UFO GOLD")
+	const [selectedItem, setSelectedItem] = useState("")
 
 	const getCurrentData = () => {
 		switch (currentView) {
@@ -63,12 +65,32 @@ export default function UFOpediaPage() {
 											))) ?? <div className="opacity-75">None</div>}
 									</div>
 								</div>
-								<div className="flex grid-cols-1 flex-col items-center justify-start">
-									<div className="flex flex-row items-center gap-1 font-medium">
+								<Button
+									variant={
+										selectedItem === elem.researchID ? "primary" : "ghost"
+									}
+									className="flex size-full grid-cols-1 flex-col items-center justify-start"
+									onClick={() => setSelectedItem(elem.researchID)}
+								>
+									<div className="flex flex-row items-center gap-1 font-bold opacity-100">
 										{elem.researchName}
 									</div>
 									<div>{elem.comments}</div>
-								</div>
+									{selectedItem === elem.researchID && (
+										<div className="flex size-full flex-col justify-center">
+											{elem.researchType} | {elem.type}
+										</div>
+									)}
+									{elem.image && (
+										<Image
+											src={`/images/ufopedia/${elem.image}.jpg`}
+											alt={elem.researchName}
+											height={128}
+											width={128}
+											className="border-1 rounded-lg border-foreground-muted shadow"
+										/>
+									)}
+								</Button>
 								<div className="flex grid-cols-1 flex-col items-center justify-start gap-1">
 									<div className="flex flex-col items-center justify-center gap-2">
 										{(elem.reqFor.length > 0 &&
