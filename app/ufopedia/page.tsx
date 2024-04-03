@@ -57,6 +57,13 @@ export default function UFOpediaPage() {
 		)
 	}
 
+	const navigateToSelection = (sel: string) => {
+		const selection = getCurrentData().find((data) => data.researchID === sel)
+		if (!selection) return
+		setCurrentFilter(selection.researchType)
+		setSelectedItem(selection.researchID)
+	}
+
 	return (
 		<div className="flex size-full items-center justify-center">
 			<div className="flex flex-col items-center justify-center gap-2">
@@ -95,6 +102,7 @@ export default function UFOpediaPage() {
 													key={`${elem.researchID}needs${req}`}
 													variant="primary"
 													className="h-[60px] w-full p-2"
+													onClick={() => navigateToSelection(req)}
 												>
 													{displayReqItem(req, true)}
 												</Button>
@@ -137,6 +145,7 @@ export default function UFOpediaPage() {
 													key={`${elem.researchID}unlocks${unlock}`}
 													variant="primary"
 													className="h-[60px] w-full p-2"
+													onClick={() => navigateToSelection(unlock)}
 												>
 													{displayReqItem(unlock, false)}
 												</Button>
